@@ -21,6 +21,20 @@
         .icon-shadow {
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
         }
+        .event-skeleton {
+            height: 150px;
+            background-color: #f3f4f6;
+            border-radius: 0.5rem;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: .5;
+          }
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -32,13 +46,8 @@
                 <img src="./images/logo.png" alt="STFD Logo" class="h-12 w-12 mr-3">
                 <a href="#" class="text-xl font-bold text-gray-800 md:text-2xl">Springfield Township <span class="text-red-700">Fire Department</span></a>
             </div>
-            <div class="hidden md:flex space-x-6">
-                <a href="https://stfdclarkoh.com" class="text-gray-600 hover:text-red-600 transition duration-300">Home</a>
-                <a href="#about" class="text-gray-600 hover:text-red-600 transition duration-300">About</a>
-                <a href="https://stfdclarkoh.com/community" class="text-gray-600 hover:text-red-700">Community Outreach</a>
-                <a href="#services" class="text-gray-600 hover:text-red-600 transition duration-300">Services</a>
-                <a href="#events" class="text-gray-600 hover:text-red-600 transition duration-300">Events</a>
-                <a href="#contact" class="text-gray-600 hover:text-red-600 transition duration-300">Contact</a>
+            <div id="desktop-nav" class="hidden md:flex space-x-6">
+                <!-- Links Loaded Dynamically -->
             </div>
              <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500">
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,12 +57,7 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
-            <a href="https://stfdclarkoh.com" class="text-gray-600 hover:text-red-600 transition duration-300">Home</a>
-            <a href="#about" class="text-gray-600 hover:text-red-600 transition duration-300">About</a>
-            <a href="https://stfdclarkoh.com/community" class="text-gray-600 hover:text-red-700">Community Outreach</a>
-            <a href="#services" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Services</a>
-            <a href="#events" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Events</a>
-            <a href="#contact" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Contact</a>
+            <!-- Links Loaded Dynamically -->
         </div>
     </header>
 
@@ -132,7 +136,7 @@
                 <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300">
                      <div class="bg-red-100 p-4 rounded-full mb-4">
                         <svg class="w-10 h-10 text-red-600 icon-shadow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m-7.542 2.72c.263.162.544.304.832.419m9.381 2.266c.253.115.516.215.787.306m-12.039-5.118c.318.195.65.37 1.001.52m-.812 6.092c.41-.162.832-.304 1.263-.419m9.381 2.266c.253.115.516.215.787.306m-11.253-2.266c.318.195.65.37 1.001.52m.812-6.092c.41-.162.832-.304 1.263-.419m5.862 8.356c.318.195.65.37 1.001.52m.812-6.092c.41-.162.832-.304 1.263-.419M3.75 9.75a8.963 8.963 0 0 1 3.535-7.143m-3.535 7.143H1.5a1.5 1.5 0 0 1-1.5-1.5V6.75a1.5 1.5 0 0 1 1.5-1.5H3.75m0 4.5v-.443c0-.853.284-1.666.806-2.316l2.24-2.8c.32-.4.752-.734 1.228-.992A8.963 8.963 0 0 1 12 3c3.832 0 7.09 2.404 8.465 5.657m-2.24 2.8c.523.65.806 1.463.806 2.316v.443m0-4.5h2.25a1.5 1.5 0 0 1 1.5 1.5v1.5a1.5 1.5 0 0 1-1.5 1.5H20.25" />
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m-7.542 2.72c.263.162.544.304.832.419m9.381 2.266c.253.115.516.215.787.306m-12.039-5.118c.318.195.65.37 1.001.52m-.812 6.092c.41-.162.832-.304 1.263-.419m9.381 2.266c.253.115.516.215.787.306m-11.253-2.266c.318.195.65.37 1.001.52m.812-6.092c.41-.162.832-.304 1.263-.419m5.862 8.356c.318.195.65.37 1.001.52m.812-6.092c.41-.162.832-.304 1.263-.419M3.75 9.75a8.963 8.963 0 0 1 3.535-7.143m-3.535 7.143H1.5a1.5 1.5 0 0 1-1.5-1.5V6.75a1.5 1.5 0 0 1 1.5-1.5H3.75m0 4.5v-.443c0-.853.284-1.666.806-2.316l2.24-2.8c.32-.4.752-.734 1.228-.992A8.963 8.963 0 0 1 12 3c3.832 0 7.09 2.404 8.465 5.657m-2.24 2.8c.523.65.806 1.463.806 2.316v.443m0-4.5h2.25a1.5 1.5 0 0 1 1.5 1.5v1.5a1.5 1.5 0 0 1-1.5-1.5H20.25" />
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Community Event Visits</h3>
@@ -158,37 +162,10 @@
                  <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Join us at our next event! We love meeting our neighbors.</p>
             </div>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div class="divide-y divide-gray-200">
-                    <!-- Event 1 -->
-                    <div class="p-6 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6 hover:bg-gray-50">
-                         <div class="flex-shrink-0 text-center bg-red-600 text-white rounded-lg p-3 w-full md:w-auto">
-                            <p class="text-xl font-bold">OCT</p>
-                            <p class="text-4xl font-bold">25</p>
-                         </div>
-                         <div class="flex-grow">
-                            <h3 class="text-xl font-semibold text-gray-800">Annual Fire Station Open House</h3>
-                            <p class="text-gray-600">10:00 AM - 2:00 PM @ Springfield Central Fire Station</p>
-                            <p class="mt-2 text-gray-700">Join us for a day of fun and learning! Featuring live demonstrations, station tours, safety presentations, and free hot dogs.</p>
-                         </div>
-                         <div class="flex-shrink-0">
-                            <a href="#contact" class="text-red-600 font-semibold hover:underline">Learn More</a>
-                         </div>
-                    </div>
-                     <!-- Event 2 -->
-                    <div class="p-6 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6 hover:bg-gray-50">
-                         <div class="flex-shrink-0 text-center bg-red-600 text-white rounded-lg p-3 w-full md:w-auto">
-                            <p class="text-xl font-bold">NOV</p>
-                            <p class="text-4xl font-bold">15</p>
-                         </div>
-                         <div class="flex-grow">
-                            <h3 class="text-xl font-semibold text-gray-800">CPR & AED Certification Class</h3>
-                            <p class="text-gray-600">9:00 AM - 1:00 PM @ Springfield Community Center</p>
-                            <p class="mt-2 text-gray-700">Get certified in CPR and Automated External Defibrillator (AED) use. Limited spots available. Please register in advance.</p>
-                         </div>
-                         <div class="flex-shrink-0">
-                            <a href="#contact" class="text-red-600 font-semibold hover:underline">Register</a>
-                         </div>
-                    </div>
+                <div id="events-list" class="divide-y divide-gray-200">
+                    <!-- Loading Skeleton -->
+                    <div class="p-6 event-skeleton"></div>
+                    <div class="p-6 event-skeleton"></div>
                 </div>
             </div>
         </section>
@@ -308,8 +285,68 @@
         </div>
     </footer>
 
+    <script type="module">
+        // --- Firebase Imports ---
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getFirestore, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // --- Firebase Configuration ---
+        const firebaseConfig = {
+          apiKey: "AIzaSyDjyl2w-HAUUSJa7wy78b9q4XOaUUaMojo",
+          authDomain: "stfd-website.firebaseapp.com",
+          projectId: "stfd-website",
+          storageBucket: "stfd-website.firebasestorage.app",
+          messagingSenderId: "52225510209",
+          appId: "1:52225510209:web:27d5b5846acedf55adefc0",
+          measurementId: "G-FL35VMGQ9F"
+        };
+        
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-stfd-website';
+
+        // --- Initialize Firebase ---
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // --- Firestore Document Reference ---
+        const contentRef = doc(db, 'artifacts', appId, 'public', 'siteContent');
+        
+        // --- Listen for Content Updates ---
+        const desktopNav = document.getElementById('desktop-nav');
+        const mobileMenuContainer = document.getElementById('mobile-menu');
+
+        onSnapshot(contentRef, (doc) => {
+            if (doc.exists()) {
+                const data = doc.data();
+
+                // Update Header Links
+                if (data.communityLinks && Array.isArray(data.communityLinks)) {
+                    // Clear existing links
+                    desktopNav.innerHTML = '';
+                    mobileMenuContainer.innerHTML = '';
+
+                    data.communityLinks.forEach(link => {
+                        // Create and append desktop link
+                        const desktopLink = document.createElement('a');
+                        desktopLink.href = link.href;
+                        desktopLink.textContent = link.text;
+                        desktopLink.className = 'text-gray-600 hover:text-red-700 transition duration-300';
+                        desktopNav.appendChild(desktopLink);
+
+                        // Create and append mobile link
+                        const mobileLink = document.createElement('a');
+                        mobileLink.href = link.href;
+                        mobileLink.textContent = link.text;
+                        mobileLink.className = 'block py-2 px-4 text-sm text-gray-600 hover:bg-red-50';
+                        mobileMenuContainer.appendChild(mobileLink);
+                    });
+                }
+            } else {
+                console.log("No content document found!");
+            }
+        });
+    </script>
     <script>
-        // Mobile menu toggle
+        // --- Mobile Menu Toggle ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
@@ -323,15 +360,109 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if(targetElement) {
+                   targetElement.scrollIntoView({
+                       behavior: 'smooth'
+                   });
+                }
                 // Close mobile menu on link click
                 if (!mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.add('hidden');
                 }
             });
         });
+
+        // --- Google Calendar Events ---
+        document.addEventListener('DOMContentLoaded', function() {
+            // !!! IMPORTANT !!!
+            // 1. You need to create a Google API Key from https://console.cloud.google.com/apis/credentials
+            // 2. Make sure the Google Calendar API is enabled for your project.
+            // 3. Replace 'YOUR_API_KEY' with your actual API key.
+            const API_KEY = 'AIzaSyDpHqMeYezZkawKxnmeqjQ4CjTZV-rfbFc';
+
+            // Your Google Calendar ID.
+            const CALENDAR_ID = '815eb52c60ea28ed6175edf24158cac8daae9a4acb7dd53d160c917c006e5f4a@group.calendar.google.com';
+            
+            const eventsContainer = document.getElementById('events-list');
+
+            if (API_KEY === 'YOUR_API_KEY') {
+                eventsContainer.innerHTML = `<div class="p-6 text-center text-red-600">Please add your Google Calendar API key in the script to see events.</div>`;
+                return;
+            }
+
+            const now = new Date().toISOString();
+            const url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${API_KEY}&timeMin=${now}&orderBy=startTime&singleEvents=true&maxResults=5`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    eventsContainer.innerHTML = ''; // Clear loading skeletons
+                    if (data.items && data.items.length > 0) {
+                        data.items.forEach(event => {
+                            const eventElement = createEventElement(event);
+                            eventsContainer.appendChild(eventElement);
+                        });
+                    } else {
+                        eventsContainer.innerHTML = '<div class="p-6 text-center text-gray-600">There are no upcoming events at this time. Please check back soon!</div>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching Google Calendar events:', error);
+                    eventsContainer.innerHTML = '<div class="p-6 text-center text-red-600">Could not load events. Please try again later.</div>';
+                });
+        });
+
+        function createEventElement(event) {
+            const startDate = new Date(event.start.dateTime || event.start.date);
+            const endDate = new Date(event.end.dateTime || event.end.date);
+
+            const month = startDate.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+            const day = startDate.getDate();
+
+            let timeString;
+            const isAllDay = !event.start.dateTime;
+
+            if (isAllDay) {
+                timeString = 'All Day';
+            } else {
+                const startTime = startDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+                const endTime = endDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+                timeString = `${startTime} - ${endTime}`;
+            }
+
+            const location = event.location ? `@ ${event.location}` : '';
+            const description = event.description || 'No description provided.';
+            
+            // Check for a link in the description.
+            let actionText = 'Learn More';
+            let actionLink = '#contact';
+
+            if(description.toLowerCase().includes('register')){
+                actionText = 'Register';
+            }
+
+            const eventDiv = document.createElement('div');
+            eventDiv.className = 'p-6 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6 hover:bg-gray-50';
+
+            eventDiv.innerHTML = `
+                <div class="flex-shrink-0 text-center bg-red-600 text-white rounded-lg p-3 w-full md:w-auto">
+                    <p class="text-xl font-bold">${month}</p>
+                    <p class="text-4xl font-bold">${day}</p>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-xl font-semibold text-gray-800">${event.summary}</h3>
+                    <p class="text-gray-600">${timeString} ${location}</p>
+                    <p class="mt-2 text-gray-700">${description}</p>
+                </div>
+                <div class="flex-shrink-0">
+                    <a href="${actionLink}" class="text-red-600 font-semibold hover:underline">${actionText}</a>
+                </div>
+            `;
+
+            return eventDiv;
+        }
+
     </script>
 </body>
 </html>
